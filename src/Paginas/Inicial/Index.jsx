@@ -1,5 +1,4 @@
 
-import styled from "styled-components";
 import Form from "../../Componentes/Form/Index";
 import RegistrationSection from "../../Componentes/RegistrationSection/Index";
 import styles from "./Inicial.module.css";

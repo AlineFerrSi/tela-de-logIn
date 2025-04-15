@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../../../public/img/imgfundo.avif');
+    background-image: url('/img/imgfundo.avif');
     background-size: cover;
 
     backdrop-filter: blur(30px);

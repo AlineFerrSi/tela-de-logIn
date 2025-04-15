@@ -5,6 +5,7 @@ import Inicial from './Paginas/Inicial/Index';
 import CreateACont from './Paginas/CreateACont/Index';
 import { UserFormLogInProvider } from './Context/UserFormLogIn'; 
 import { UserFormCreateProvider } from './Context/UserFormCreateLogIn';
+import RecoverPassword from './Paginas/RecoverPassword/Index';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
     path: "createacont",
     element: <CreateACont />,
   },
+  {
+    path: "passwordhelp",
+    element: <RecoverPassword />,
+  },
+
 ]);
 
 const AppProviders = ({ children }) => (

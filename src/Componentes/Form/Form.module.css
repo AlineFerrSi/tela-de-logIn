@@ -33,6 +33,12 @@
 
 }
 
+.loginOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .containerCheckbox{
     display: flex;
     flex-direction: row;
@@ -52,3 +58,14 @@
 .inputStyles:focus {
     border-color: #36646D;  /* Azul mais escuro ao clicar */
 }
+
+.passwordHelp{
+    color: aliceblue;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.passwordHelp:hover {
+    text-decoration: underline;
+  }

@@ -6,13 +6,18 @@ import styles from "./Form.module.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { UserFormLogInContext } from "../../Context/UserFormLogIn";
+import { Link, useLocation } from "react-router-dom";
 
 const Form = () => {
+
     const { forLogIn, setforLogIn } = useContext(UserFormLogInContext);
     
     const [manterLogado, setManterLogado] = useState(true);
-    
+    const [helpPassword, sethelpPassword] = useState();
 
+    const location = useLocation();
+    const isCreateAccountPage = location.pathname === "/passwordhelp";
+   
     const [logIn, setLogIn] = useState({
 
         email: '',
@@ -63,16 +68,34 @@ const Form = () => {
                 />
             </div>
 
-            <div className={styles.containerCheckbox}>
-                <input 
-                    type="checkbox" 
-                    id="manterLogado"
-                    value = {manterLogado}
-                    onChange={()=> updateValue("keepLoggedIn", manterLogado)}
-                    onClick={() => setManterLogado(!manterLogado) }
-                      
-                />
-                <p>manter-me logado</p>
+            <div className={styles.loginOptions}>
+
+                <div className={styles.containerCheckbox}>
+                    <input
+                        type="checkbox"
+                        id="manterLogado"
+                        value={manterLogado}
+                        onChange={() => updateValue("keepLoggedIn", manterLogado)}
+                        onClick={() => setManterLogado(!manterLogado)}
+
+                    />
+                    <p>manter-me logado</p>
+
+                </div>
+
+                <div className={styles.passwordHelp}>
+                    <Link 
+                        className={styles.passwordHelp} 
+                        onClick={()=> sethelpPassword(true)}
+                        to={isCreateAccountPage? "/" : "/passwordhelp"}
+                        >
+
+                        <p>Esqueceu a Senha?</p>
+                    </Link>
+                    
+                </div>
+
+
             </div>
 
             <Button>Logar</Button>
