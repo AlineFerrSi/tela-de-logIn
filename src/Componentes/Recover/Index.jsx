@@ -22,10 +22,16 @@ const Recover = () =>{
                 />
             </div>
 
-            <Button>Enviar ao Email</Button>
+            <Link to={"/checkemail"}>
+                <Button>Enviar ao Email</Button>
+            </Link>
+            
 
             <div>
-                <Link className={styles.returnMain}>
+                <Link 
+                    className={styles.returnMain}
+                    to={"/"}
+                    >
                     <p>Voltar ao logIn</p>
                 </Link>
             </div>
